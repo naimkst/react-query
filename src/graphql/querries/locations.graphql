@@ -1,0 +1,18 @@
+query locations{
+  locations{
+    results{
+      id
+      name
+      dimension
+      residents{
+        id
+        name
+        status
+        species
+        type
+        gender
+        image
+      }
+    }
+  }
+}

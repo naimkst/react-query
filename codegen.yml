@@ -1,0 +1,16 @@
+overwrite: true
+schema: "https://rickandmortyapi.com/graphql"
+documents: "src/**/*.graphql"
+generates:
+  src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      addInfiniteQuery: true
+      fetcher:
+        func: "../lib/fetcher#graphqlFetcher"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
